@@ -64,6 +64,11 @@ namespace :install do
         reload_vundle
     end
 
+    desc "install fonts"
+    task :fonts do
+        run %{ cp -f fonts/* $HOME/Library/Fonts }
+    end
+
     desc "install zsh stuff"
     task :zsh do
         # install ohmyzsh
