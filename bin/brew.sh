@@ -13,6 +13,7 @@ brew install mtr
 brew install pv
 brew install gpg
 brew install tmux
+brew install tree
 
 # node
 brew install node # This installs `npm` too using the recommended installation method
