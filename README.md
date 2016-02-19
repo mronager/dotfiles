@@ -51,7 +51,7 @@ Go to Preferences → Profiles → Colors → Load Presets → Solarized Dark
 If you are not used to tmux, play around with it a bit. It is similar to `screen`. Here is a [quick guide](https://gist.github.com/MohamedAlaa/2961058) to using tmux.
 
 ### Vim
-I have not installed any plugins. It is bundled with `vundle`, so installing plugins from here is easy.
+It is bundled with `vundle`, so installing plugins from here is easy.
 
 ### Aliases
 Check out `zsh/aliases` for some pretty cool and handy aliases.

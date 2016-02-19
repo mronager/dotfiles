@@ -12,7 +12,7 @@ Bundle 'altercation/vim-colors-solarized'
 set number
 syntax enable
 set background=dark
-let g:solarized_termcolors = 256
+let g:solarized_termcolors=16
 colorscheme solarized
 
 filetype plugin indent on " Required

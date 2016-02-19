@@ -33,7 +33,7 @@ namespace :install do
     desc "install git stuff"
     task :git do
         run %{ gem install git-up }
-        install_files "git/"
+        install_files "git/*"
     end
 
     desc "install iterm stuff"
@@ -51,14 +51,15 @@ namespace :install do
 
     desc "install tmux stuff"
     task :tmux do
-        install_files "tmux/"
+        install_files "tmux/*"
     end
 
     desc "install vim stuff"
     task :vim do
         install_files "vim/"
+        run %{ ln -sf ~/.vim/vimrc ~/.vimrc }
         # Install vundle
-        git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+        run %{ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle }
     end
 
     desc "install zsh stuff"
@@ -86,7 +87,7 @@ def install_brew
 end
 
 def install_files(dir)
-    Dir.glob("#{dir}*").each do |f|
+    Dir.glob("#{dir}").each do |f|
         file = f.split('/').last
         source = "#{ENV["PWD"]}/#{f}"
         target = "#{ENV["HOME"]}/.#{file}"
