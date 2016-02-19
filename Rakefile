@@ -59,7 +59,9 @@ namespace :install do
         install_files "vim/"
         run %{ ln -sf ~/.vim/vimrc ~/.vimrc }
         # Install vundle
-        run %{ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle }
+        vundle_path = File.join('vim','bundle', 'vundle')
+        run %{ git clone https://github.com/gmarik/vundle.git #{vundle_path} } unless File.exists?(vundle_path)
+        reload_vundle
     end
 
     desc "install zsh stuff"
@@ -103,4 +105,8 @@ end
 
 def reload_zsh
     run %{ source ~/.zshrc }
+end
+
+def reload_vundle
+    run %{ vim --noplugin -N "+set hidden" "+syntax on" +BundleClean +BundleInstall! +qall }
 end

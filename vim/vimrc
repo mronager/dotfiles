@@ -2,11 +2,14 @@ set nocompatible
 filetype off    " Required
 
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundles/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
+
+runtime ruby.vundle
 
 " Some settings to enable the theme:
 set number
